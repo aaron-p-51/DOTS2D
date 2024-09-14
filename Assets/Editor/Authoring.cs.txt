@@ -1,0 +1,12 @@
+using UnityEngine;
+using Unity.Entities;
+
+public class #SCRIPTNAME# : MonoBehaviour
+{
+	private class AuthoringBakker : Baker<#SCRIPTNAME#>
+	{
+		Entity authoringEntity = GetEntity(TransformUsageFlags.None);
+
+		//AddComponent(authoringEntity, );
+	}
+}

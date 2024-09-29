@@ -13,7 +13,7 @@ namespace DOTS2D
 		{
 			public override void Bake(PlayerAuthoring authoring)
 			{
-				Entity playerEntity = GetEntity(TransformUsageFlags.None);
+				Entity playerEntity = GetEntity(TransformUsageFlags.Dynamic); // Dynamic add transform component
 
 				AddComponent(playerEntity, new PlayerComponent
 				{

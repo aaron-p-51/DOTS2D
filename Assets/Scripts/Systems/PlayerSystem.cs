@@ -54,17 +54,24 @@ namespace DOTS2D
 
                 LocalTransform playerTransform = entityManager.GetComponentData<LocalTransform>(playerEntity);
 
-                Entity bulletEntity = entityManager.Instantiate(playerComponent.bulletPrefab);
-                ECB.AddComponent(bulletEntity, new BulletComponent { speed = 10f });
+                //Entity bulletEntity = entityManager.Instantiate(playerComponent.bulletPrefab);
 
-                LocalTransform bulletTransform = entityManager.GetComponentData<LocalTransform>(bulletEntity);
-                bulletTransform.Position = playerTransform.Position + playerTransform.Right() + playerTransform.Up() * -0.35f;
-                bulletTransform.Rotation = playerTransform.Rotation;
-                //bulletTransform.Scale = 0.2f;
+                //ECB.AddComponent(bulletEntity, new BulletComponent
+                //{
+                //    velocity = playerTransform.Right() * 10f,
+                //    speed = 10f,
+                //    size = 0.2f,
+                //    lifespan = 1.5f
+                //});
 
-                ECB.SetComponent(bulletEntity, bulletTransform);
-                ECB.Playback(entityManager);
-                ECB.Dispose();
+                //LocalTransform bulletTransform = entityManager.GetComponentData<LocalTransform>(bulletEntity);
+                //bulletTransform.Position = playerTransform.Position + playerTransform.Right() + playerTransform.Up() * -0.35f;
+                //bulletTransform.Rotation = playerTransform.Rotation;
+
+
+                //ECB.SetComponent(bulletEntity, bulletTransform);
+                //ECB.Playback(entityManager);
+                //ECB.Dispose();
 
                 nextShootTime = (float)SystemAPI.Time.ElapsedTime + playerComponent.shootCooldown;
             }
